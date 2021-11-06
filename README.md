@@ -1,0 +1,1 @@
+# A_Example_for_Calculating_Robot_Dynamics_Using_Pinocchio_Library
