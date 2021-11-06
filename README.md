@@ -12,8 +12,9 @@ In this work, i use **Pinocchio** to verify the dynamics of kuka iiwa7. This lib
 2. Verify the anti-symmetric property of ***dM***/*dt* - 2* ***C***
 
 ## Implementation 
+
 First, you should install **Pinocchio** on your system，please follow the procedure described [here](https://stack-of-tasks.github.io/pinocchio/download.html). Then, put the **dy.py** file and **iiwa7_description.urdf** file in the same folder, run the script using *Python*, finally you can get the ***M***, ***C***, and ***G*** with your model   
----
+- - -
 **Note**: if you change the **.urdf** file with your model, you should also change the dimension of ***q***, ***qdot***, and ***qddot*** equal to your model' DOF at the same time. 
 
 ## References
