@@ -1,17 +1,19 @@
 # A Example for Calculating Robot Dynamics Using Pinocchio Library
 Developed by: Xinyang Tian.
 
-Platform: Python.
+Platform: Linux + [Pinocchio](https://github.com/stack-of-tasks/pinocchio).
 
-In this work, the dynamic model of a 7-DOF robot manipulator has been established. Here are some notes about this script:
-
-- Using recursive Newton-Euler algorithm to calculate the inverse dynamic model of serial robot manipulator (only rotational joints) with modified DH parameters.
-- The parameters of the modified DH coordinates, inertia tensor, centroid coordinates and mass of each link can be found in the ***iiwamodel*** file.
-- No external force/torque.
+In this work, i use **Pinocchio** to verify the dynamics of kuka iiwa7. This library has a lot of functions, such as forward/inverse dynamics, jocobian and its analytical derivatives, etc. The main functions of this script are as follows:
+1. Calculating inverse dynamics of the 7-DOF manipulator (kuka iiwa7 as example, you can change **.urdf file** with your model), include:
+    - Total torque of each joint;
+    - Gravity contribution ***G(q)***;
+    - inertia Matrix ***M*** of each joint;
+    - Coriolis Matrix ***C*** of each joint;
+2. Verify the anti-symmetric property of ***dM***/*dt* - 2* ***C***
 
 ## Implementation 
-The code is implemented in MATLAB R2019b. Also, other versions of Matlab are available. Before running this script, pleas enter the input parameters: q (1×7), qd (1×7), and qdd (1×7). Cubic or quintic polynomials are recommended for planning trajectory. As a consequence, the output parameters are seven torques corresponding to seven joints of the robot manipulator.
+First, you should install [Pinocchio](https://github.com/stack-of-tasks/pinocchio) on your system，please follow the procedure described [here](https://stack-of-tasks.github.io/pinocchio/download.html). Then, put the **dy.py** and **iiwa7_description.urdf** in the same folder, run the script using *Python*, enjoy it!
 
 ## References
-[1] Q. Zhan, Robotics: Mechanisms Kinematics, Dynamics and Motion Planning, Tsinghua University Press, China, 2019.  
-[2] A. De Luca and L. Ferrajoli, "A modified newton-euler method for dynamic computations in robot fault detection and control," 2009 IEEE International Conference on Robotics and Automation, 2009, pp. 3359-3364.
+[1] Carpentier, J., Saurel, G., Buondonno, G., Mirabel, J., Lamiraux, F., Stasse, O., and Mansard, N, "The Pinocchio C++ library: A fast and flexible implementation of rigid body dynamics algorithms and their analytical derivatives," in 2019 *IEEE/SICE International Symposium on System Integration (SII)*, pp. 614-619. 
+[2] R. Featherstone, *Rigid Body Dynamics Algorithms*. Springer, 2008.
