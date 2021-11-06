@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="iiwa7_description">
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="3.1415926536 3.1415926536 0.0" />
+  </joint>
+  <!-- ROS base_link to ROCR6 'Base' Coordinates transform -->
+    <link name="base"/>
+    <joint name="base_link-base_fixed_joint" type="fixed">
+      <!-- NOTE: this rotation is only needed as long as base_link itself is
+                 not corrected wrt the real robot (ie: rotated over 180
+                 degrees)
+      -->
+      <origin xyz="0 0 0" rpy="0 0 -3.1415926536"/>
+      <parent link="base_link"/>
+      <child link="base"/>
+    </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.012834911047822 1.79134175543637E-07 0.0701062577366928"
+        rpy="0 0 0" />
+      <mass
+        value="3.86303091463624" />
+      <inertia
+        ixx="0.0142256704413454"
+        ixy="-3.19372727097521E-08"
+        ixz="0.000612790312740971"
+        iyy="0.0177657808202598"
+        iyz="1.18850584600882E-07"
+        izz="0.0169629994125553" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-6.39109821319543E-06 -0.034729037842593 -0.0694866858710533"
+        rpy="0 0 0" />
+      <mass
+        value="2.70226076087178" />
+      <inertia
+        ixx="0.0170859559349616"
+        ixy="2.91199475940233E-08"
+        ixz="5.20904239071717E-07"
+        iyy="0.0162998483326947"
+        iyz="0.00304165525352386"
+        izz="0.00602871788118219" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.34"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.9671"
+      upper="2.9671"
+      effort="176"
+      velocity="1.7104" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="4.96472389014448E-06 -0.0673247622737407 0.0344122918005824"
+        rpy="0 0 0" />
+      <mass
+        value="2.72579867189412" />
+      <inertia
+        ixx="0.0170490815617928"
+        ixy="-3.79596001366311E-07"
+        ixz="-2.51051808618651E-07"
+        iyy="0.00609539282479041"
+        iyz="-0.00283663644721896"
+        izz="0.0162457222090037" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0944"
+      upper="2.0944"
+      effort="176"
+      velocity="1.7104" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-2.84259735583102E-05 0.0295595859821916 -0.0889992834313287"
+        rpy="0 0 0" />
+      <mass
+        value="3.17487341105504" />
+      <inertia
+        ixx="0.0250774018969845"
+        ixy="1.373201042092E-06"
+        ixz="4.79233661203821E-06"
+        iyy="0.0238067773138523"
+        iyz="-0.00487288532035055"
+        izz="0.00760733718358683" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 -0.4 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.9671"
+      upper="2.9671"
+      effort="110"
+      velocity="1.7453" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="3.4262840098399E-05 -0.0673247826712604 -0.0344127329948241"
+        rpy="0 0 0" />
+      <mass
+        value="2.72586327298563" />
+      <inertia
+        ixx="0.0170490074669764"
+        ixy="-2.8368071072399E-06"
+        ixz="6.05223008600314E-07"
+        iyy="0.00609545717539595"
+        iyz="0.00283668444172525"
+        izz="0.0162457503524049" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0944"
+      upper="2.0944"
+      effort="110"
+      velocity="2.2689" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="3.6974368968972E-07 -0.0213857248469594 -0.140034008106193"
+        rpy="0 0 0" />
+      <mass
+        value="1.69385265696553" />
+      <inertia
+        ixx="0.0100792563802718"
+        ixy="-7.95029339317725E-08"
+        ixz="4.05210135617854E-08"
+        iyy="0.0087026558761484"
+        iyz="0.00309047467879419"
+        izz="0.00446960100553327" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0 -0.4 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.9671"
+      upper="2.9671"
+      effort="110"
+      velocity="2.4435" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="2.11528708374963E-07 -0.00212050451380574 0.000290003854200789"
+        rpy="0 0 0" />
+      <mass
+        value="1.83673675177986" />
+      <inertia
+        ixx="0.00509448542740178"
+        ixy="-9.68566201875939E-08"
+        ixz="-6.71917580243673E-08"
+        iyy="0.00354262038354004"
+        iyz="-0.000249580563641727"
+        izz="0.00489900265685273" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0944"
+      upper="2.0944"
+      effort="40"
+      velocity="3.1416" />
+  </joint>
+  <link
+    name="link7">
+    <inertial>
+      <origin
+        xyz="7.14054445566977E-06 -8.9669261584376E-08 -0.0252187575970348"
+        rpy="0 0 0" />
+      <mass
+        value="0.269169172496439" />
+      <inertia
+        ixx="0.000198764020802821"
+        ixy="8.81293102346025E-10"
+        ixz="-2.77069253642837E-08"
+        iyy="0.000195312118631655"
+        iyz="4.04315060239699E-10"
+        izz="0.000322516900041368" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iiwa7_description/meshes/link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0 -0.126 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link6" />
+    <child
+      link="link7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.0543"
+      upper="3.0543"
+      effort="40"
+      velocity="3.1416" />
+  </joint>
+</robot>
