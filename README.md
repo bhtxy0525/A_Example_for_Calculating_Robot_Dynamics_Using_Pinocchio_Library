@@ -1,7 +1,7 @@
 # A Example for Calculating Robot Dynamics Using Pinocchio Library
 Developed by: Xinyang Tian.
 
-Platform: Linux + [Pinocchio](https://github.com/stack-of-tasks/pinocchio).
+Platform: Linux(ubuntu) + [Pinocchio](https://github.com/stack-of-tasks/pinocchio).
 
 In this work, i use **Pinocchio** to verify the dynamics of kuka iiwa7. This library has a lot of functions, such as forward/inverse dynamics and their analytical derivatives, jocobian and its analytical derivatives, etc. The main functions of this script are as follows:
 1. Calculating inverse dynamics of the 7-DOF manipulator (kuka iiwa7 as example), include:
