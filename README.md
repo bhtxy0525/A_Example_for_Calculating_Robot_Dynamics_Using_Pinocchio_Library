@@ -1,4 +1,4 @@
-# A Example for Calculating Robot Dynamics Using Pinocchio Library
+# A Example for Calculating Robot Dynamics Using **Pinocchio** Library
 Developed by: Xinyang Tian.
 
 Platform: Linux(ubuntu) + [Pinocchio](https://github.com/stack-of-tasks/pinocchio).
